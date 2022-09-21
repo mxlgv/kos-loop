@@ -86,6 +86,12 @@ struct  DISPLAY
         bytes_per_pixel dd ?
 ends
 
+struct  DISKMEDIAINFO
+        Flags           dd ? ; Combination of DISK_MEDIA_* bits.
+        SectorSize      dd ? ; Size of the sector.
+        Capacity        dq ? ; Size of the media in sectors.
+ends
+
 ; The following macro assume that we are on uniprocessor machine.
 ; Serious work is needed for multiprocessor machines.
 macro spin_lock_irqsave spinlock
